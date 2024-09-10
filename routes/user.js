@@ -1,7 +1,9 @@
 const {Router}=require("express");  //Router is a seperate object in express so we are extracting only Router class from express
 const User=require('../models/user');
 
+
 const router=Router();
+
 
 router.get("/signin",(req,res)=>{
     return res.render("signin");
@@ -25,6 +27,10 @@ router.post("/signin",async(req,res)=>{
         });
     }
 
+})
+
+router.get('/logout',(req,res)=>{
+    res.clearCookie("token").redirect("/");
 })
 
 router.post("/signup", async(req,res)=>{

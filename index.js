@@ -37,4 +37,7 @@ const { checkForAuthenticationCoookie } = require("./middlewares/authentication"
  app.use("/user",userRoute);
  app.use("/blog",blogRoute);
 
+
+
+
  app.listen(PORT,()=>console.log(`Server started at PORT:${PORT}`));
